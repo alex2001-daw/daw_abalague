@@ -8,12 +8,15 @@
 <body>
     <?php
     function ultimdia($mes,$any){
-        $ultimDia = 28;
-        while (checkdate($mes,$ultimDia +1,$any)){
-            $ultimDia++;
+        $ultimdia = 28;
+        while (checkdate($mes, $ultimdia, $any) = "True"){
+            $ultimdia ++;
+            echo "$ultimdia";
         }
-        return $ultimDia;
+        return $ultimdia;
     }
+
+    $fila = 1;
     $primer = date('w', mktime(0,0,0,1,$mes,$any));
     $diaActual = 1;
     $mes = date("F");
@@ -24,15 +27,30 @@
     echo "<tr><th colspan =7>$mes</th></tr>";
     echo "<tr><th>Domingo</th><th>Lunes</th><th>Martres</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th><th>Sabado</th></tr>";
     echo "<tr>";
+    $numeroDia = $numeroDia -1;
+    $primer = $primer -1;
     for ($i=0; $i<7; $i ++){
-        if ($i < $prim){
+        if ($i < $primer){
             echo "<td></td>";
         } else{
             echo "<td>$diaActual</td>";
+            $diaActual++;
         }
-        $diaActual++;
     }
     echo "</tr>";
+    while ($fila < 5){
+        echo "<tr>";
+        for ($i=0; $i<7; $i ++){
+            if ($diaActual > $ultimDia){
+                echo "<td></td>";
+            }else {
+                echo "<td>$diaActual</td>";
+                $diaActual ++;
+            }
+        }
+        $fila ++;
+    }
+
     echo "</table>";
     ?>
 </body>
