@@ -7,28 +7,24 @@
 </head>
 <body>
     <?php
-    function ultimdia($mes,$any){
-        $ultimdia = 28;
-        while (checkdate($mes, $ultimdia, $any) = "True"){
-            $ultimdia ++;
-            echo "$ultimdia";
-        }
-        return $ultimdia;
-    }
-
+    #Variables
+    $mesL = date('F');
+    $mes = date("m");
+    $any = date("Y");
     $fila = 1;
     $primer = date('w', mktime(0,0,0,1,$mes,$any));
+    echo date('w');
     $diaActual = 1;
-    $mes = date("F");
-    $any = date("Y");
     $numeroDia = date('w', mktime(0,0,0,$diaActual,$mes,$any));
-    $ultimDia = ultimdia($mes,$any);
+    $ultimDia = date('t');
     echo "<table border=1><tr><th colspan =7>$any</th></tr>";
-    echo "<tr><th colspan =7>$mes</th></tr>";
+    echo "<tr><th colspan =7>$mesL</th></tr>";
     echo "<tr><th>Domingo</th><th>Lunes</th><th>Martres</th><th>Miercoles</th><th>Jueves</th><th>Viernes</th><th>Sabado</th></tr>";
     echo "<tr>";
     $numeroDia = $numeroDia -1;
     $primer = $primer -1;
+
+    #Primera fila
     for ($i=0; $i<7; $i ++){
         if ($i < $primer){
             echo "<td></td>";
@@ -38,7 +34,9 @@
         }
     }
     echo "</tr>";
-    while ($fila < 5){
+
+    #Las demas filas
+    while ($fila < 6){
         echo "<tr>";
         for ($i=0; $i<7; $i ++){
             if ($diaActual > $ultimDia){
@@ -50,10 +48,8 @@
         }
         $fila ++;
     }
-
     echo "</table>";
+
     ?>
 </body>
 </html>
-
-
