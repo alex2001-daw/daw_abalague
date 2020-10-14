@@ -44,22 +44,11 @@
     if ($_SERVER['REQUEST_METHOD']=='POST'){
         print_r ($_REQUEST["mytext"]);
         echo "<br>";
+        print_r ($_REQUEST['myradio']);
         echo "<br>";
         print_r ($_REQUEST["myselect"]);
         echo "<br>";
         print_r ($_REQUEST["mytextarea"]);
-
-        foreach ($_REQUEST as $calu => $valor){
-            echo "$calu </br>";
-            $array = (gettype($valor) == "array");
-            if ($array){
-                foreach($valor as $v) {
-                    echo "$v </br>";
-                }
-            }else{
-                echo "$valor </br>";
-            }
-        }
     }
     ?>
 </body>
