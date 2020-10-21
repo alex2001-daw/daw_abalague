@@ -6,8 +6,10 @@
         echo "radio: ";
         print_r ($_REQUEST['myradio']);
         echo "<br>";
+        echo "select: ";
         print_r ($_REQUEST["myselect"]);
         echo "<br>";
+        echo "text area: ";
         print_r ($_REQUEST["mytextarea"]);
     } else {
     ?>
