@@ -13,4 +13,7 @@
             return TRUE;
         }
     }
+    function logout(){
+        
+    }
 ?>
