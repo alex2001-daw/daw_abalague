@@ -4,6 +4,8 @@
         session_destroy();
     }
     if (isset($_SESSION["newses"]) or isset($_SESSION["newpass"])){
+        echo "<h1>tot ha funcionat</h1>";
+        echo "<br>";
         echo $_SESSION["newses"];
         echo "<br>";
         echo $_SESSION["newpass"];
