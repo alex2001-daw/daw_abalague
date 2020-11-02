@@ -70,16 +70,13 @@
                     }else if (isset($_POST["newuser"]) and isset($_POST["newpass"])){
                         $newuser = $_POST["newuser"];
                         $newpass = $_POST["newpass"];
-                        $sqlup = "UPDATE users SET user = '$newuser' , password = '$newpass', role = 'user' WHERE user='$user' and password = '$pass'";
-                        $resultat = (mysqli_query($conn, $sqlup) or die("Error". mysqli_error($conn)));
-                        echo "Tot ha anat bé torna a session i entra de nou amb la teva nova info";
+                        usersUpdate($conn , $user, $newuser, $newpass);
                     }
                 }
-            }
-    
         }else{
             header("Location: http://dawjavi.insjoaquimmir.cat/abalague/UF1/a5/session.php");
-            }
+        }
+    }
 ?>
 </body>
 </html>

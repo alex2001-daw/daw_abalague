@@ -61,4 +61,9 @@
         $resultat = (mysqli_query($conn, $sqla) or die("Error". mysqli_error($conn)));
         echo "Tot ha anat bé torna a carregar la página per veure els canvis";
     }
+    function usersUpdate($conn , $user, $newuser, $newpass){
+        $sqlup = "UPDATE users SET user = '$newuser' , password = '$newpass', role = 'user' WHERE user='$user'";
+        $resultat = (mysqli_query($conn, $sqlup) or die("Error". mysqli_error($conn)));
+        echo "Tot ha anat bé torna a session i entra de nou amb la teva nova info";
+    }
 ?>
