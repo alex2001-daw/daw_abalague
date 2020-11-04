@@ -23,13 +23,12 @@
         $resultat = $conn->prepare($sql);
         $resultat->execute();
         $resultat->bind_result($tuser, $tpass, $role);
+        echo "<table border=1><tr><th  colspan ='3'><p><b>Aqui son les teves dades</b></p></th></tr>";
+        echo "<tr><td><b>Mail</b></td><td><b>Password</b></td><td><b>Role</b></td></tr>";
         while($resultat->fetch()){
-            echo "<h1>Aqui son les teves dades: </h1><br>";
-            echo "user: $tuser <br>";
-            echo "pass: $tpass <br>";
-            echo "rol: $role <br>";
-            echo "<br><br><br>";
+            echo "<tr><td> $tuser </td><td> $tpass </td><td> $role </td></tr>";
         }
+        echo "</table><br>";
     }
 
     function contRol($conn, $user){
@@ -64,6 +63,17 @@
     function usersUpdate($conn , $user, $newuser, $newpass){
         $sqlup = "UPDATE users SET user = '$newuser' , password = '$newpass', role = 'user' WHERE user='$user'";
         $resultat = (mysqli_query($conn, $sqlup) or die("Error". mysqli_error($conn)));
-        echo "Tot ha anat bé torna a session i entra de nou amb la teva nova info";
+        echo "Tot ha anat bé torna a session i entra de nou amb la teva nova info.";
+    }
+
+    function eliminarUsuari($conn, $deluser){
+        $sqld = "DELETE FROM users WHERE user = '$deluser'";
+        $resultat = mysqli_query($conn, $sqld) or die('Consulta fallida: ' . mysqli_error($conn));
+        echo "<br>Recarrega la página per veure els canvis.";
+    }
+
+    function createUserA($conn, $newuser, $newpass, $newrole){
+        $sql = "INSERT INTO users (user , password, role) VALUES ('$regUser', '$regPass', '$newrole')";
+        $result = (mysqli_query($conn, $sql) or die("Error: ". mysqli_error($conn)));
     }
 ?>
