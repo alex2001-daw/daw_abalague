@@ -92,12 +92,12 @@
             consultaUsers($conn ,$user);
 ?>
                 <form action="privada.php" method="post">
-                    <input type="submit" name="logout" value="Tornar a session.php">
-                </form>
-                <form action="privada.php" method="post">
                     <p>Escriu el nou usuari: </p><input type="text" name="newuser"><br>
                     <p>Escriu la nova contrasenya: </p><input type="password" name="newpass"><br>
                     <input type="submit" name="update" value="OK">
+                </form><br><br>
+                <form action="privada.php" method="post">
+                    <input type="submit" name="logout" value="Tornar a session.php">
                 </form>
 <?php
                 $resultat = null;
@@ -110,9 +110,9 @@
                         usersUpdate($conn , $user, $newuser, $newpass);
                     }
                 }
-        }else{
-            header("Location: http://dawjavi.insjoaquimmir.cat/abalague/UF1/a5/session.php");
         }
+    }else{
+        header("Location: http://dawjavi.insjoaquimmir.cat/abalague/UF1/a5/session.php");
     }
 ?>
 </body>
