@@ -1,0 +1,10 @@
+.privadadd {
+    display: flex-start;
+    flex-direction: row;
+    width: 27%;
+    margin: 10px;
+}
+article {
+    display: flex;
+    flex-direction: row;
+}

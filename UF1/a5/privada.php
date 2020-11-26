@@ -53,7 +53,7 @@
                     <h4>Crear Usuari</h4>
                     <form action="privada.php" method="post">
                         <p>Escriu el correu que vols utilitzar per el nou usuari</p>
-                        <input type="text" name="newuser">
+                        <input type="text" name="newname">
                         <p>Escriu la contrassenya del nou usuari</p>
                         <input type="password" name="newpass">
                         <p>Escriu el rol de l'usuari</p>

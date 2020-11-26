@@ -73,7 +73,7 @@
     }
 
     function createUserA($conn, $newuser, $newpass, $newrole){
-        $sql = "INSERT INTO users (user , password, role) VALUES ('$regUser', '$regPass', '$newrole')";
+        $sql = "INSERT INTO users (user , password, role) VALUES ('$newuser', '$newpass', '$newrole')";
         $result = (mysqli_query($conn, $sql) or die("Error: ". mysqli_error($conn)));
     }
 ?>
