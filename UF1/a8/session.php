@@ -37,6 +37,8 @@
             }
         }else if(isset($_POST["register"])){
             header ("Location: http://dawjavi.insjoaquimmir.cat/abalague/UF1/a8/register.php");
+        }else if (isset($_POST["recovery"])){
+            header("Location: http://dawjavi.insjoaquimmir.cat/abalague/UF1/a8/infomail.php");
         }
     }
 ?>
@@ -83,6 +85,9 @@
     <form action="object.php" method="post">
         <p>Insereix l'ID del objecte que vols veure: </p><input type="number" name="veure">
         <input type="submit" value="veure" name="visualitza">
+    </form>
+    <form action="session.php" method="post">
+        <input type="submit" name="recovery" value="recuperar password">
     </form>
     <?php
 
